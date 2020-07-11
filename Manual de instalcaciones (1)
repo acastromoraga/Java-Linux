@@ -1,0 +1,83 @@
+Manual de instalaciones Ubuntu
+
+Instalación de Java y configuración de JAVA_HOME
+
+visitar la pagina: https://www.youtube.com/watch?v=b72ybbjEfrM
+
+
+1- Descargar el jdk de Oracle
+
+2- Descomprimir el archivo por la terminal
+
+comand: sudo tar zxvf jdk-8u241-linux-x64.tar.gz
+
+3-verificar el archivo
+comand: ls
+
+4- Crear directorio donde se guardará java
+
+comand: sudo mkdir -p /usr/jvm
+
+5- Verificar la creaciónd e la carpeta
+comand: ls /ruta/del/archivo
+
+6- Mover el archivo jdk desde el directorio de Descarga al directorio creado
+comand: sudo mv jdk /usr/jvm
+
+7- Verificar que en descargar ya no se encuentra el archivo jdk
+comand: ls
+
+8- Ir al directorio donde se movió el jdk (/usr/jvm)
+
+comand: cd /usr/jvm
+
+9- Proceder a realizar la instalación del jdk
+comand: sudo update-alternatives --install /usr/bin/java java /usr/jvm/jdk/bin/java 1
+
+se deja la opción 1 para que tome el jdk instalado como prioridad 1
+
+10 -realizar un config
+comand: sudo update-alternatives --config java
+
+El mensaje debe mostrar que solo existe una alternativa de java
+
+11-probar la version de java instalado
+comand: java -version
+
+12- Configurar la variable de entorno JAVA_HOME
+sudo nano /etc/environment
+
+13- dentro del archivo poner la ruta del vm
+agregar el siguiente Path
+
+JAVA_HOME="/usr/jvm/jdk1.8.0_241"
+
+14- guardar y salir del archivo
+
+15- refrescar la variable de entorno
+
+comand: source /etc/environment
+
+16- Verificar que se haya instalado correctamente
+
+comnd: echo $JAVA_HOME
+
+17- Instalación lista
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
